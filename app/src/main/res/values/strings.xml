@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Multithreading</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="urls">
+        <item>Image 1</item>
+        <item>Image 2</item>
+        <item>Image 3</item>
+        <item>Image 4</item>
+        <item>Image 5</item>
+        <item>Image 6</item>
+    </string-array>
+    
+    <string-array name="imageUrls">
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cat_poster_1.jpg/250px-Cat_poster_1.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/AfricanWildCat.jpg/220px-AfricanWildCat.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Termografia_kot.jpg/220px-Termografia_kot.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Britishblue.jpg/800px-Britishblue.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Polydactylcat.jpg/800px-Polydactylcat.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/4/4c/Blackcat-Lilith.jpg</item>
+
+    </string-array>
+    
+</resources>
