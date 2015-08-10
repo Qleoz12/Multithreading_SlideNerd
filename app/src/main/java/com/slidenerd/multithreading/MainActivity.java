@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         listView.setOnItemClickListener(this);
         listOfImages = getResources().getStringArray(R.array.imageUrls);
         progressBar = (ProgressBar) findViewById(R.id.downloadProgress);
+        loadingSection = (LinearLayout) findViewById(R.id.loadingSection);
 
     }
 
@@ -61,6 +62,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
          Thread myThread = new Thread(new DownloadImagesThread(url));
          myThread.start();
+
+
     }
 
     private void makeCatsDir() {
@@ -112,6 +115,13 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         } catch (IOException e) {
             L.m("" + e);
         } finally {
+            this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    loadingSection.setVisibility(View.GONE);
+                }
+            });
+
             if (connection != null) {
                 connection.disconnect();
             }
@@ -129,6 +139,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 }
             }
         }
+
         return successfull;
     }
 
@@ -149,6 +160,13 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         @Override
         public void run() {
+            MainActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    loadingSection.setVisibility(View.VISIBLE);
+                }
+            });
+
             downLoadImageUsingThreads(url);
         }
     }
